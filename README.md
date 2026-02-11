@@ -1,6 +1,6 @@
 ## ESPHome Zehnder Comfoair E300/E400
 
-ESPHome component for reading the Zehnder Comfoair E330/E400 heat recovering ventilation units.
+ESPHome component for reading the Zehnder ComfoAir E300/E400 heat recovering ventilation units.
 
 ### Example of minimal configuration yaml
 ```yaml
@@ -27,6 +27,7 @@ uart:
 modbus:
   uart_id: uart_modbus
   id: modbus1
+#  flow_control_pin: GPIOXX # used for the MAX485 chip without automatic flow control
 
 modbus_controller:
 - id: modbus_device
@@ -35,3 +36,22 @@ modbus_controller:
   setup_priority: -10
   update_interval: 5s
 ```
+
+
+### Registry table
+
+holding registers
+
+| Adress | Name                                | Datatype | Unit | Note                     |
+|--------|-------------------------------------|----------|------|--------------------------|
+| 0x136  | Exhaust air duty                    | U_WORD   | %    | % x 10                   |
+| 0x137  | Supply air duty                     | U_WORD   | %    | % x 10                   |
+| 0x138  | Exhaust air flow                    | U_WORD   | m³/h |                          |
+| 0x139  | Supply air flow                     | U_WORD   | m³/h |                          |
+| 0x13A  | Exhaust air fan speed               | U_WORD   | RPM  |                          |
+| 0x13B  | Supply air fan speed                | U_WORD   | RPM  |                          |
+| 0x14A  | External ventilation level setpoint | U_WORD   | -    | 0:low;50:medium;100:high |
+| 0x12C  | Outside air temperature             | U_WORD   | °C   | °C x 10                  |
+| 0x12D  | Pre-heater temperature              | U_WORD   | °C   | °C x 10                  |
+| 0x130  | Extract air temperature             | U_WORD   | °C   | °C x 10                  |
+| 0x131  | Exhaust air temperature             | U_WORD   | °C   | °C x 10                  |
