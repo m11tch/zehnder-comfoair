@@ -48,8 +48,8 @@ holding registers
 
 | Adress | Name                                | Datatype | Unit | Note                     |
 |--------|-------------------------------------|----------|------|--------------------------|
-| 0x136  | Exhaust air duty                    | U_WORD   | %    | % x 10                   |
-| 0x137  | Supply air duty                     | U_WORD   | %    | % x 10                   |
+| 0x136  | Exhaust motor duty cycle            | U_WORD   | %    | % x 10                   |
+| 0x137  | Supply motor duty cycle             | U_WORD   | %    | % x 10                   |
 | 0x138  | Exhaust air flow                    | U_WORD   | m³/h |                          |
 | 0x139  | Supply air flow                     | U_WORD   | m³/h |                          |
 | 0x13A  | Exhaust air fan speed               | U_WORD   | RPM  |                          |
