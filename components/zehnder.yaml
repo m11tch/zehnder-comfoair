@@ -134,8 +134,8 @@ text_sensor:
     id: debug_register_dump
     address: 0x120
     register_count: 64
-    value_type: RAW
-    update_interval: never
+    response_size: 128
+    skip_updates: 100
     lambda: |-
       std::string res = "Read " + to_string(data.size()/2) + " regs";
       int start_addr = 0x120;
