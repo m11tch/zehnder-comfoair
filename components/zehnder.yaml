@@ -136,7 +136,7 @@ text_sensor:
     register_type: holding
     register_count: 64
     response_size: 128
-    skip_updates: 100
+    skip_updates: 5
     lambda: |-
       std::string res = "Read " + to_string(data.size()/2) + " regs";
       int start_addr = 0x120;
@@ -148,8 +148,4 @@ text_sensor:
       }
       ESP_LOGI("DUMP", "--- Register Dump End ---");
       return res;
-button:
-  - platform: template
-    name: "Scan Registers"
-    on_press:
-      - component.update: debug_register_dump
+
