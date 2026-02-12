@@ -10,7 +10,7 @@ The unit uses RS485 serial communication at 19200:8:EVEN:1. Connect using a twis
 ```yaml
 packages:
   remote_package:
-    url: https://github.com/remonvandenbrandt/zehnder-comfoair
+    url: https://github.com/CodedCactus/zehnder-comfoair
     ref: main
     files: [components/zehnder.yaml]
     refresh: 0s
@@ -52,8 +52,8 @@ holding registers
 | 0x137  | Supply fan duty cycle               | U_WORD   | %    | % x 10                   |
 | 0x138  | Exhaust fan air flow                | U_WORD   | m³/h |                          |
 | 0x139  | Supply fan air flow                 | U_WORD   | m³/h |                          |
-| 0x13A  | Exhaust fan air speed               | U_WORD   | RPM  |                          |
-| 0x13B  | Supply fan air speed                | U_WORD   | RPM  |                          |
+| 0x13A  | Exhaust fan speed                   | U_WORD   | RPM  |                          |
+| 0x13B  | Supply fan speed                    | U_WORD   | RPM  |                          |
 | 0x14A  | External ventilation level setpoint | U_WORD   | -    | 0:low;50:medium;100:high |
 | 0x12C  | Outside air temperature             | U_WORD   | °C   | °C x 10                  |
 | 0x12D  | Pre-heater temperature              | U_WORD   | °C   | °C x 10                  |
