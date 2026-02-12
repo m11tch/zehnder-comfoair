@@ -130,17 +130,17 @@ number:
 text_sensor:
   - platform: modbus_controller
     modbus_controller_id: modbus_device
-    name: "Dump 0-99"
-    id: dump_0_99
+    name: "Dump 0-31"
+    id: dump_0_31
     address: 0x0
     register_type: holding
-    register_count: 100
-    response_size: 200
+    register_count: 32
+    response_size: 64
     skip_updates: 10
     lambda: |-
       std::string res = "Read " + to_string(data.size()/2) + " regs";
       int start_addr = 0x0;
-      ESP_LOGI("DUMP", "--- Dump 0-99 Start ---");
+      ESP_LOGI("DUMP", "--- Dump 0-31 Start ---");
       for (int i = 0; i < data.size() && i + 1 < data.size(); i += 2) {
         int addr = start_addr + (i / 2);
         uint16_t val = (uint16_t(data[i]) << 8) | uint16_t(data[i + 1]);
@@ -150,37 +150,38 @@ text_sensor:
 
   - platform: modbus_controller
     modbus_controller_id: modbus_device
-    name: "Dump 100-199"
-    id: dump_100_199
-    address: 0x64
+    name: "Dump 96-127"
+    id: dump_96_127
+    address: 0x60
     register_type: holding
-    register_count: 100
-    response_size: 200
+    register_count: 32
+    response_size: 64
     skip_updates: 10
     lambda: |-
       std::string res = "Read " + to_string(data.size()/2) + " regs";
-      int start_addr = 0x64;
-      ESP_LOGI("DUMP", "--- Dump 100-199 Start ---");
+      int start_addr = 0x60;
+      ESP_LOGI("DUMP", "--- Dump 96-127 Start (Includes Reg 101) ---");
       for (int i = 0; i < data.size() && i + 1 < data.size(); i += 2) {
         int addr = start_addr + (i / 2);
         uint16_t val = (uint16_t(data[i]) << 8) | uint16_t(data[i + 1]);
-        if(val != 0) ESP_LOGI("DUMP", "Reg %d (0x%X): %u", addr, addr, val);
+        // Always print Reg 101 (0x65)
+        if(val != 0 || addr == 101) ESP_LOGI("DUMP", "Reg %d (0x%X): %u", addr, addr, val);
       }
       return res;
 
   - platform: modbus_controller
     modbus_controller_id: modbus_device
-    name: "Dump 200-299"
-    id: dump_200_299
-    address: 0xC8
+    name: "Dump 288-319"
+    id: dump_288_319
+    address: 0x120
     register_type: holding
-    register_count: 100
-    response_size: 200
+    register_count: 32
+    response_size: 64
     skip_updates: 10
     lambda: |-
       std::string res = "Read " + to_string(data.size()/2) + " regs";
-      int start_addr = 0xC8;
-      ESP_LOGI("DUMP", "--- Dump 200-299 Start ---");
+      int start_addr = 0x120;
+      ESP_LOGI("DUMP", "--- Dump 288-319 Start ---");
       for (int i = 0; i < data.size() && i + 1 < data.size(); i += 2) {
         int addr = start_addr + (i / 2);
         uint16_t val = (uint16_t(data[i]) << 8) | uint16_t(data[i + 1]);
