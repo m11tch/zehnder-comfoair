@@ -132,15 +132,15 @@ text_sensor:
     modbus_controller_id: modbus_device
     name: "Debug Register Dump"
     id: debug_register_dump
-    address: 0x120
+    address: 0x0
     register_type: holding
     register_count: 64
     response_size: 128
     skip_updates: 5
     lambda: |-
       std::string res = "Read " + to_string(data.size()/2) + " regs";
-      int start_addr = 0x120;
-      ESP_LOGI("DUMP", "--- Register Dump Start (0x120 - 0x160) ---");
+      int start_addr = 0x0;
+      ESP_LOGI("DUMP", "--- Register Dump Start (0x0 - 0x40) ---");
       for (int i = 0; i < data.size() && i + 1 < data.size(); i += 2) {
         int addr = start_addr + (i / 2);
         uint16_t val = (uint16_t(data[i]) << 8) | uint16_t(data[i + 1]);
