@@ -127,6 +127,8 @@ number:
     min_value: 0
     max_value: 100
     step: 1
+
+
 text_sensor:
   - platform: modbus_controller
     modbus_controller_id: modbus_device
@@ -138,13 +140,62 @@ text_sensor:
     response_size: 64
     skip_updates: 10
     lambda: |-
-      std::string res = "Read " + to_string(data.size()/2) + " regs";
+      std::string res = "";
       int start_addr = 0x0;
       ESP_LOGI("DUMP", "--- Dump 0-31 Start ---");
       for (int i = 0; i < data.size() && i + 1 < data.size(); i += 2) {
         int addr = start_addr + (i / 2);
         uint16_t val = (uint16_t(data[i]) << 8) | uint16_t(data[i + 1]);
-        if(val != 0) ESP_LOGI("DUMP", "Reg %d (0x%X): %u", addr, addr, val);
+        if(val != 0) {
+          ESP_LOGI("DUMP", "Reg %d (0x%X): %u", addr, addr, val);
+          res += to_string(addr) + ":" + to_string(val) + " ";
+        }
+      }
+      return res;
+
+  - platform: modbus_controller
+    modbus_controller_id: modbus_device
+    name: "Dump 32-63"
+    id: dump_32_63
+    address: 0x20
+    register_type: holding
+    register_count: 32
+    response_size: 64
+    skip_updates: 10
+    lambda: |-
+      std::string res = "";
+      int start_addr = 0x20;
+      ESP_LOGI("DUMP", "--- Dump 32-63 Start ---");
+      for (int i = 0; i < data.size() && i + 1 < data.size(); i += 2) {
+        int addr = start_addr + (i / 2);
+        uint16_t val = (uint16_t(data[i]) << 8) | uint16_t(data[i + 1]);
+        if(val != 0) {
+          ESP_LOGI("DUMP", "Reg %d (0x%X): %u", addr, addr, val);
+          res += to_string(addr) + ":" + to_string(val) + " ";
+        }
+      }
+      return res;
+
+  - platform: modbus_controller
+    modbus_controller_id: modbus_device
+    name: "Dump 64-95"
+    id: dump_64_95
+    address: 0x40
+    register_type: holding
+    register_count: 32
+    response_size: 64
+    skip_updates: 10
+    lambda: |-
+      std::string res = "";
+      int start_addr = 0x40;
+      ESP_LOGI("DUMP", "--- Dump 64-95 Start ---");
+      for (int i = 0; i < data.size() && i + 1 < data.size(); i += 2) {
+        int addr = start_addr + (i / 2);
+        uint16_t val = (uint16_t(data[i]) << 8) | uint16_t(data[i + 1]);
+        if(val != 0) {
+          ESP_LOGI("DUMP", "Reg %d (0x%X): %u", addr, addr, val);
+          res += to_string(addr) + ":" + to_string(val) + " ";
+        }
       }
       return res;
 
@@ -158,14 +209,131 @@ text_sensor:
     response_size: 64
     skip_updates: 10
     lambda: |-
-      std::string res = "Read " + to_string(data.size()/2) + " regs";
+      std::string res = "";
       int start_addr = 0x60;
-      ESP_LOGI("DUMP", "--- Dump 96-127 Start (Includes Reg 101) ---");
+      ESP_LOGI("DUMP", "--- Dump 96-127 Start ---");
       for (int i = 0; i < data.size() && i + 1 < data.size(); i += 2) {
         int addr = start_addr + (i / 2);
         uint16_t val = (uint16_t(data[i]) << 8) | uint16_t(data[i + 1]);
-        // Always print Reg 101 (0x65)
-        if(val != 0 || addr == 101) ESP_LOGI("DUMP", "Reg %d (0x%X): %u", addr, addr, val);
+        if(val != 0) {
+          ESP_LOGI("DUMP", "Reg %d (0x%X): %u", addr, addr, val);
+          res += to_string(addr) + ":" + to_string(val) + " ";
+        }
+      }
+      return res;
+
+  - platform: modbus_controller
+    modbus_controller_id: modbus_device
+    name: "Dump 128-159"
+    id: dump_128_159
+    address: 0x80
+    register_type: holding
+    register_count: 32
+    response_size: 64
+    skip_updates: 10
+    lambda: |-
+      std::string res = "";
+      int start_addr = 0x80;
+      ESP_LOGI("DUMP", "--- Dump 128-159 Start ---");
+      for (int i = 0; i < data.size() && i + 1 < data.size(); i += 2) {
+        int addr = start_addr + (i / 2);
+        uint16_t val = (uint16_t(data[i]) << 8) | uint16_t(data[i + 1]);
+        if(val != 0) {
+          ESP_LOGI("DUMP", "Reg %d (0x%X): %u", addr, addr, val);
+          res += to_string(addr) + ":" + to_string(val) + " ";
+        }
+      }
+      return res;
+
+  - platform: modbus_controller
+    modbus_controller_id: modbus_device
+    name: "Dump 160-191"
+    id: dump_160_191
+    address: 0xA0
+    register_type: holding
+    register_count: 32
+    response_size: 64
+    skip_updates: 10
+    lambda: |-
+      std::string res = "";
+      int start_addr = 0xA0;
+      ESP_LOGI("DUMP", "--- Dump 160-191 Start ---");
+      for (int i = 0; i < data.size() && i + 1 < data.size(); i += 2) {
+        int addr = start_addr + (i / 2);
+        uint16_t val = (uint16_t(data[i]) << 8) | uint16_t(data[i + 1]);
+        if(val != 0) {
+          ESP_LOGI("DUMP", "Reg %d (0x%X): %u", addr, addr, val);
+          res += to_string(addr) + ":" + to_string(val) + " ";
+        }
+      }
+      return res;
+
+  - platform: modbus_controller
+    modbus_controller_id: modbus_device
+    name: "Dump 192-223"
+    id: dump_192_223
+    address: 0xC0
+    register_type: holding
+    register_count: 32
+    response_size: 64
+    skip_updates: 10
+    lambda: |-
+      std::string res = "";
+      int start_addr = 0xC0;
+      ESP_LOGI("DUMP", "--- Dump 192-223 Start ---");
+      for (int i = 0; i < data.size() && i + 1 < data.size(); i += 2) {
+        int addr = start_addr + (i / 2);
+        uint16_t val = (uint16_t(data[i]) << 8) | uint16_t(data[i + 1]);
+        if(val != 0) {
+          ESP_LOGI("DUMP", "Reg %d (0x%X): %u", addr, addr, val);
+          res += to_string(addr) + ":" + to_string(val) + " ";
+        }
+      }
+      return res;
+
+  - platform: modbus_controller
+    modbus_controller_id: modbus_device
+    name: "Dump 224-255"
+    id: dump_224_255
+    address: 0xE0
+    register_type: holding
+    register_count: 32
+    response_size: 64
+    skip_updates: 10
+    lambda: |-
+      std::string res = "";
+      int start_addr = 0xE0;
+      ESP_LOGI("DUMP", "--- Dump 224-255 Start ---");
+      for (int i = 0; i < data.size() && i + 1 < data.size(); i += 2) {
+        int addr = start_addr + (i / 2);
+        uint16_t val = (uint16_t(data[i]) << 8) | uint16_t(data[i + 1]);
+        if(val != 0) {
+          ESP_LOGI("DUMP", "Reg %d (0x%X): %u", addr, addr, val);
+          res += to_string(addr) + ":" + to_string(val) + " ";
+        }
+      }
+      return res;
+
+  - platform: modbus_controller
+    modbus_controller_id: modbus_device
+    name: "Dump 256-287"
+    id: dump_256_287
+    address: 0x100
+    register_type: holding
+    register_count: 32
+    response_size: 64
+    skip_updates: 10
+    lambda: |-
+      std::string res = "";
+      int start_addr = 0x100;
+      ESP_LOGI("DUMP", "--- Dump 256-287 Start ---");
+      for (int i = 0; i < data.size() && i + 1 < data.size(); i += 2) {
+        int addr = start_addr + (i / 2);
+        uint16_t val = (uint16_t(data[i]) << 8) | uint16_t(data[i + 1]);
+        if(val != 0) {
+          ESP_LOGI("DUMP", "Reg %d (0x%X): %u", addr, addr, val);
+          res += to_string(addr) + ":" + to_string(val) + " ";
+        }
       }
       return res;
 
@@ -179,13 +347,39 @@ text_sensor:
     response_size: 64
     skip_updates: 10
     lambda: |-
-      std::string res = "Read " + to_string(data.size()/2) + " regs";
+      std::string res = "";
       int start_addr = 0x120;
       ESP_LOGI("DUMP", "--- Dump 288-319 Start ---");
       for (int i = 0; i < data.size() && i + 1 < data.size(); i += 2) {
         int addr = start_addr + (i / 2);
         uint16_t val = (uint16_t(data[i]) << 8) | uint16_t(data[i + 1]);
-        if(val != 0) ESP_LOGI("DUMP", "Reg %d (0x%X): %u", addr, addr, val);
+        if(val != 0) {
+          ESP_LOGI("DUMP", "Reg %d (0x%X): %u", addr, addr, val);
+          res += to_string(addr) + ":" + to_string(val) + " ";
+        }
+      }
+      return res;
+
+  - platform: modbus_controller
+    modbus_controller_id: modbus_device
+    name: "Dump 320-351"
+    id: dump_320_351
+    address: 0x140
+    register_type: holding
+    register_count: 32
+    response_size: 64
+    skip_updates: 10
+    lambda: |-
+      std::string res = "";
+      int start_addr = 0x140;
+      ESP_LOGI("DUMP", "--- Dump 320-351 Start ---");
+      for (int i = 0; i < data.size() && i + 1 < data.size(); i += 2) {
+        int addr = start_addr + (i / 2);
+        uint16_t val = (uint16_t(data[i]) << 8) | uint16_t(data[i + 1]);
+        if(val != 0) {
+          ESP_LOGI("DUMP", "Reg %d (0x%X): %u", addr, addr, val);
+          res += to_string(addr) + ":" + to_string(val) + " ";
+        }
       }
       return res;
 
