@@ -133,6 +133,7 @@ text_sensor:
     name: "Debug Register Dump"
     id: debug_register_dump
     address: 0x120
+    register_type: holding
     register_count: 64
     response_size: 128
     skip_updates: 100
