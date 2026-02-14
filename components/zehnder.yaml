@@ -122,19 +122,21 @@ number:
   - platform: modbus_controller
     modbus_controller_id: modbus_device
     name: "Analog 0-10V Input Simulation (Reg 328)"
-    address: 328
+    address: 0x148
     value_type: U_WORD
     min_value: 0
     max_value: 100
     step: 1
+
   - platform: modbus_controller
     modbus_controller_id: modbus_device
     name: "RF Setpoint (Reg 329)"
-    address: 329
+    address: 0x149
     value_type: U_WORD
     min_value: 0
     max_value: 100
     step: 1
+
   - platform: modbus_controller
     modbus_controller_id: modbus_device
     name: "Ventilation level"
@@ -142,12 +144,7 @@ number:
     value_type: U_WORD
     min_value: 0
     max_value: 100
-    min_value: 0
-    max_value: 100
     step: 1
-
-
-
 
 text_sensor:
   - platform: modbus_controller
