@@ -48,3 +48,5 @@ holding registers
 | 0x148  | 0-10 V control setpoint             | U_WORD   | -     | 0:low;50:medium;100:high |
 | 0x149  | RF control setpoint                 | U_WORD   | -     | 0:low;50:medium;100:high |
 | 0x13D  | RF input voltage                    | U_WORD   | V*100 | steering signal (0-10)   |
+| 0x13F  | Pre-heater active                   | U_WORD   | -     | 0:off;1:on               |
+| 0x152  | Pre-heater enabled                  | U_WORD   | -     | 0:disabled;1:enabled     |
