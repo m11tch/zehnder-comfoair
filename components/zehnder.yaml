@@ -146,7 +146,7 @@ sensor:
 - platform: modbus_controller
   modbus_controller_id: modbus_device
   name: "3-way switch control setpoint"
-  id: 3way_control_setpoint
+  id: three_way_control_setpoint
   register_type: holding
   address: 0x14A
   unit_of_measurement: "%"
