@@ -318,12 +318,10 @@ binary_sensor:
   name: "Pre-heater active"
   address: 0x13F
   register_type: holding
-  value_type: U_WORD
   id: pre_heater_active
 - platform: modbus_controller
   modbus_controller_id: modbus_device
   name: "Pre-heater enabled"
   address: 0x152
   register_type: holding
-  value_type: U_WORD
   id: pre_heater_enabled
