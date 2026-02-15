@@ -179,3 +179,5 @@ sensor:
   accuracy_decimals: 1
   filters:
     - multiply: 0.01
+# To enable debug sensors for unknown registers, uncomment the following line and ensure the file exists:
+<<: !include debug_sensors.yaml
