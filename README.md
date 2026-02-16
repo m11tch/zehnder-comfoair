@@ -50,3 +50,5 @@ holding registers
 | 0x13D  | RF input voltage                    | U_WORD   | V*100 | steering signal (0-10)   |
 | 0x13F  | Pre-heater active                   | U_WORD   | -     | 0:off;1:on               |
 | 0x152  | Pre-heater enabled                  | U_WORD   | -     | 0:disabled;1:enabled     |
+| 0x151  | Fireplace mode                      | U_WORD   | -     | 0:off;1:on               |
+| 0x06E  | Software Version                    | U_WORD   | -     | 20800 = 2.8.0            |
