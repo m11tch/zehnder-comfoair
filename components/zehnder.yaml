@@ -215,4 +215,3 @@ sensor:
   value_type: U_WORD
   unit_of_measurement: "m³/h"
   device_class: "volume_flow_rate"
-  state_class: "measurement"
