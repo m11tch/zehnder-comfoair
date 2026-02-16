@@ -187,35 +187,35 @@ sensor:
   name: "Debug 0x065 (101)"
   address: 0x65
   register_type: holding
-  value_type: U_WORD
+  value_type: U_WORD # User: 10, Modscan: 10
 - platform: modbus_controller
   modbus_controller_id: modbus_device
   entity_category: "diagnostic"
   name: "Debug 0x06E (110)"
   address: 0x6E
   register_type: holding
-  value_type: U_WORD
+  value_type: U_WORD # User: 20800, Modscan: 10000
 - platform: modbus_controller
   modbus_controller_id: modbus_device
   entity_category: "diagnostic"
   name: "Debug 0x06F (111)"
   address: 0x6F
   register_type: holding
-  value_type: U_WORD
+  value_type: U_WORD # User: 0, Modscan: 1
 - platform: modbus_controller
   modbus_controller_id: modbus_device
   entity_category: "diagnostic"
   name: "Debug 0x071 (113)"
   address: 0x71
   register_type: holding
-  value_type: U_WORD
+  value_type: U_WORD # User: 105, Modscan: 100
 - platform: modbus_controller
   modbus_controller_id: modbus_device
   entity_category: "diagnostic"
   name: "Debug 0x072 (114)"
   address: 0x72
   register_type: holding
-  value_type: U_WORD
+  value_type: U_WORD # User: 418, Modscan: 243
 
   # --- Gap in Temperatures ---
 - platform: modbus_controller
@@ -342,6 +342,35 @@ sensor:
   name: "Debug 0x14B (331)"
   address: 0x14B
   register_type: holding
+
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  entity_category: "diagnostic"
+  name: "Debug 0x14C (332) - Feature Flag?"
+  address: 0x14C
+  register_type: holding
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  entity_category: "diagnostic"
+  name: "Debug 0x14D (333) - Feature Flag?"
+  address: 0x14D
+  register_type: holding
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  entity_category: "diagnostic"
+  name: "Debug 0x14E (334) - Feature Flag?"
+  address: 0x14E
+  register_type: holding
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  entity_category: "diagnostic"
+  name: "Debug 0x14F (335) - Feature Flag?"
+  address: 0x14F
+  register_type: holding
   value_type: U_WORD
 - platform: modbus_controller
   modbus_controller_id: modbus_device
@@ -350,7 +379,35 @@ sensor:
   address: 0x150
   register_type: holding
   value_type: U_WORD
-
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  entity_category: "diagnostic"
+  name: "Debug 0x151 (337) - Feature Flag?"
+  address: 0x151
+  register_type: holding
+  value_type: U_WORD
+ # 0x152 (338) is Pre-heater Enabled
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  entity_category: "diagnostic"
+  name: "Debug 0x153 (339) - Feature Flag?"
+  address: 0x153
+  register_type: holding
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  entity_category: "diagnostic"
+  name: "Debug 0x154 (340) - Feature Flag?"
+  address: 0x154
+  register_type: holding
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  entity_category: "diagnostic"
+  name: "Debug 0x155 (341) - Feature Flag?"
+  address: 0x155
+  register_type: holding
+  value_type: U_WORD
 - platform: modbus_controller
   modbus_controller_id: modbus_device
   entity_category: "diagnostic"
