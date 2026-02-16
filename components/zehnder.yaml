@@ -41,7 +41,7 @@ sensor:
   unit_of_measurement: "%"
   value_type: U_WORD
   accuracy_decimals: 1
-    state_class: "measurement"
+  state_class: "measurement"
   id: zehnder_supply_duty
   filters:
     - multiply: 0.1
