@@ -12,8 +12,8 @@ The pin-out is shown in the image below:
 ### Example of minimal configuration yaml
 ```yaml
 substitutions:
-  rx_pin: GPIO01
-  tx_pin: GPIO03
+  tx_pin: GPIO01
+  rx_pin: GPIO03
   update_interval: 15s
 
 packages:
@@ -35,8 +35,8 @@ holding registers
 |--------|-------------------------------------|----------|-------|--------------------------|
 | 0x136  | Exhaust fan duty cycle              | U_WORD   | %*10  |                          |
 | 0x137  | Supply fan duty cycle               | U_WORD   | %*10  |                          |
-| 0x138  | Exhaust fan air flow                | U_WORD   | m³/h  |                          |
-| 0x139  | Supply fan air flow                 | U_WORD   | m³/h  |                          |
+| 0x138  | Exhaust fan flow rate               | U_WORD   | m³/h  |                          |
+| 0x139  | Supply fan flow rate                | U_WORD   | m³/h  |                          |
 | 0x13A  | Exhaust fan speed                   | U_WORD   | RPM   |                          |
 | 0x13B  | Supply fan speed                    | U_WORD   | RPM   |                          |
 | 0x12C  | Outdoor air temperature             | S_WORD   | °C*10 |                          |
@@ -44,7 +44,9 @@ holding registers
 | 0x12F  | Supply air temperature              | S_WORD   | °C*10 |                          |
 | 0x130  | Extract air temperature             | S_WORD   | °C*10 |                          |
 | 0x131  | Exhaust air temperature             | S_WORD   | °C*10 |                          |
-| 0x14A  | 3-way switch control setpoint       | U_WORD   | -     | 0:low;50:medium;100:high |
-| 0x148  | 0-10 V control setpoint             | U_WORD   | -     | 0:low;50:medium;100:high |
-| 0x149  | RF control setpoint                 | U_WORD   | -     | 0:low;50:medium;100:high |
-| 0x13D  | RF input voltage                    | U_WORD   | V*100 | steering signal (0-10)   |
+| 0x140  | Exhaust fan flow rate setpoint      | U_WORD   | m³/h  |                          | 
+| 0x141  | Supply fan flow rate setpoint       | U_WORD   | m³/h  |                          |
+| 0x148  | 0-10 V control setpoint             | U_WORD   | %     | 0:low;50:medium;100:high |
+| 0x149  | RF control setpoint                 | U_WORD   | %     | 0:low;50:medium;100:high |
+| 0x14A  | 3-way switch control setpoint       | U_WORD   | %     | 0:low;50:medium;100:high |
+| 0x13D  | RF input voltage                    | U_WORD   | V*100 | steering signal (0-10V)  |
