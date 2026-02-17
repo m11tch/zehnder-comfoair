@@ -44,6 +44,10 @@ holding registers
 | 0x12F  | Supply air temperature              | S_WORD   | °C*10 |                          |
 | 0x130  | Extract air temperature             | S_WORD   | °C*10 |                          |
 | 0x131  | Exhaust air temperature             | S_WORD   | °C*10 |                          |
+| 0x132  | Outdoor humidity                    | S_WORD   | %*10  |                          |
+| 0x133  | Supply humidity                     | S_WORD   | %*10  |                          |
+| 0x134  | Extract humidity                    | S_WORD   | %*10  |                          |
+| 0x135  | Exhaust humidity                    | S_WORD   | %*10  |                          |
 | 0x141  | Exhaust fan flow rate setpoint      | U_WORD   | m³/h  |                          | 
 | 0x140  | Supply fan flow rate setpoint       | U_WORD   | m³/h  |                          |
 | 0x148  | 0-10 V control setpoint             | U_WORD   | %     | 0:low;50:medium;100:high |
