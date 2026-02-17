@@ -267,3 +267,34 @@ sensor:
   value_type: U_WORD
   unit_of_measurement: "m³/h"
   device_class: "volume_flow_rate"
+
+# --- device info ---
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  entity_category: "diagnostic"
+  name: "Software Version (raw)"
+  id: zehnder_software_version
+  address: 0x6E
+  register_type: holding
+  value_type: U_WORD # 20800 = 2.8.0 (Major.Minor.Patch with 2 digits)
+  
+binary_sensor:
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Pre-heater active"
+  address: 0x13F
+  register_type: holding
+  id: zehnder_pre_heater_active
+  device_class: heat
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Pre-heater present"
+  address: 0x152
+  register_type: holding
+  id: zehnder_pre_heater_present
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Fireplace mode"
+  address: 0x151
+  register_type: holding
+  id: zehnder_fireplace_mode
