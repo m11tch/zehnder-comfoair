@@ -270,13 +270,32 @@ sensor:
 
 # --- device info ---
 - platform: modbus_controller
+  internal: true
   modbus_controller_id: modbus_device
   entity_category: "diagnostic"
   name: "Software Version (raw)"
-  id: zehnder_software_version
+  id: zehnder_software_version_raw
   address: 0x6E
   register_type: holding
+  skip_updates: 100
   value_type: U_WORD # 20800 = 2.8.0 (Major.Minor.Patch with 2 digits)
+  on_value: 
+    then:
+      - text_sensor.template.publish:
+          id: zehnder_software_version
+          state: !lambda |-
+            int value = id(zehnder_software_version_raw).state;
+            int major = value / 10000;      // Extract the major version
+            int minor = (value / 100) % 100; // Extract the minor version
+            int patch = value % 100;         // Extract the patch version
+            return std::to_string(major) + "." + std::to_string(minor) + "." + std::to_string(patch);
+
+text_sensor:
+  - platform: template
+    name: "zehnder_software_version"
+    id: zehnder_software_version
+    update_interval: never
+    entity_category: "diagnostic"
   
 binary_sensor:
 - platform: modbus_controller
