@@ -44,10 +44,10 @@ holding registers
 | 0x12F  | Supply air temperature              | S_WORD   | °C*10 |                          |
 | 0x130  | Extract air temperature             | S_WORD   | °C*10 |                          |
 | 0x131  | Exhaust air temperature             | S_WORD   | °C*10 |                          |
-| 0x132  | Outdoor humidity                    | S_WORD   | %*10  |                          |
-| 0x133  | Supply humidity                     | S_WORD   | %*10  |                          |
-| 0x134  | Extract humidity                    | S_WORD   | %*10  |                          |
-| 0x135  | Exhaust humidity                    | S_WORD   | %*10  |                          |
+| 0x132  | Outdoor humidity                    | U_WORD   | %*10  |                          |
+| 0x133  | Supply humidity                     | U_WORD   | %*10  |                          |
+| 0x134  | Extract humidity                    | U_WORD   | %*10  |                          |
+| 0x135  | Exhaust humidity                    | U_WORD   | %*10  |                          |
 | 0x141  | Exhaust fan flow rate setpoint      | U_WORD   | m³/h  |                          | 
 | 0x140  | Supply fan flow rate setpoint       | U_WORD   | m³/h  |                          |
 | 0x148  | 0-10 V control setpoint             | U_WORD   | %     | 0:low;50:medium;100:high |
@@ -55,6 +55,8 @@ holding registers
 | 0x14A  | 3-way switch control setpoint       | U_WORD   | %     | 0:low;50:medium;100:high |
 | 0x13D  | RF input voltage                    | U_WORD   | V*100 | steering signal (0-10V)  |
 | 0x13F  | Pre-heater active                   | U_WORD   | -     | 0:off;1:on               |
-| 0x152  | Pre-heater present                  | U_WORD   | -     | 0:absent;1:present       |
-| 0x151  | Fireplace mode                      | U_WORD   | -     | 0:off;1:on               |
+| 0x152  | Pre-heater present*                 | U_WORD   | -     | 0:absent;1:present       |
+| 0x151  | Fireplace mode*                     | U_WORD   | -     | 0:off;1:on               |
 | 0x06E  | Software Version                    | U_WORD   | -     | 20800 = 2.8.0            |
+
+*Only available on later firmware versions (comfirmed on 2.8.0)
