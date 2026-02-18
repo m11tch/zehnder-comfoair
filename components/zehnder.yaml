@@ -290,17 +290,6 @@ sensor:
   unit_of_measurement: "m³/h"
   device_class: "volume_flow_rate"
 
-- platform: modbus_controller
-  modbus_controller_id: modbus_device
-  name: "Total operating time"
-  id: zehnder_total_operating_time
-  register_type: holding
-  address: 0x150
-  entity_category: "diagnostic"
-  device_class: 'duration'
-  value_type: U_WORD
-  unit_of_measurement: 'd'
-
 # --- device info ---
 - platform: modbus_controller
   internal: true

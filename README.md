@@ -60,7 +60,6 @@ holding registers
 | 0x13F  | Pre-heater active                   | U_WORD   | -     | 0:off;1:on               |
 | 0x152  | Pre-heater present*                 | U_WORD   | -     | 0:absent;1:present       |
 | 0x151  | Fireplace mode*                     | U_WORD   | -     | 0:off;1:on               |
-| 0x150  | Total operating time                | U_WORD   | days  |                          |
 | 0x06E  | Firmware version                    | U_WORD   | -     | 20800 = 2.8.0            |
 
 *Only available on later firmware versions (confirmed on 2.8.0)
