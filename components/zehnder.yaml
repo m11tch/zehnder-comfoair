@@ -274,7 +274,6 @@ sensor:
   id: zehnder_total_operating_time
   register_type: holding
   address: 0x150
-  skip_updates: 100
   entity_category: "diagnostic"
   device_class: 'duration'
   value_type: U_WORD
@@ -289,7 +288,6 @@ sensor:
   id: zehnder_firmware_version_raw
   address: 0x6E
   register_type: holding
-  skip_updates: 100
   value_type: U_WORD # 20800 = 2.8.0 (Major.Minor.Patch with 2 digits)
   on_value: 
     then:
