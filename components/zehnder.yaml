@@ -235,6 +235,19 @@ sensor:
 
 - platform: modbus_controller
   modbus_controller_id: modbus_device
+  name: "0-10 V input voltage"
+  id: zehnder_analog_input_voltage
+  register_type: holding
+  address: 0x13C
+  unit_of_measurement: "V"
+  value_type: U_WORD
+  accuracy_decimals: 1
+  state_class: "measurement"
+  device_class: 'voltage'
+  filters:
+    - multiply: 0.01
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
   name: "RF input voltage"
   id: zehnder_rf_input_voltage
   register_type: holding
