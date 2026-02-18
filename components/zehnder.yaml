@@ -312,6 +312,12 @@ text_sensor:
 binary_sensor:
 - platform: modbus_controller
   modbus_controller_id: modbus_device
+  name: "RF input enabled"
+  address: 0x13E
+  register_type: holding
+  id: zehnder_rf_input_enabled
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
   name: "Pre-heater active"
   address: 0x13F
   register_type: holding
