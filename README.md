@@ -1,8 +1,8 @@
 ## ESPHome Zehnder ComfoAir E300/E400
-ESPHome component for communication with the Zehnder ComfoAir E300/E400 heat recovering ventilation units. This module allows for reading sensor states into Home-assistant.
+ESPHome component for communication with the Zehnder ComfoAir E300/E400 heat recovering ventilation units using modbus RTU. This module allows for reading sensor states into Home-assistant.
 
 ### Setup 
-The unit uses RS485 serial communication to interface with the ventilation unit. The serial communication is available on the C3 connector. The serial configuration is shown in the following table:
+The component uses modbus RTU serial communication over RS485 to interface with the ventilation unit. The serial communication is available on the C3 connector. The serial configuration is shown in the following table:
 
 | Baud rate | Word length | Parity | Stop bits |
 |-----------|-------------|--------|-----------|
@@ -84,7 +84,7 @@ The following data fields have been identified on from the holding registers. Cu
 | 0x149   | RF control setpoint                 | U_WORD   | %    | 1     | 0:low;50:medium;100:high |
 | 0x14A   | 3-way switch control setpoint       | U_WORD   | %    | 1     | 0:low;50:medium;100:high |
 | 0x14B   | Bathroom switch control setpoint    | U_WORD   | %    | 1     | 0:low;50:medium;100:high |
-| 0x13C   | Analog (0-10 V) input voltage       | U_word   | V    | 100   | steering signal (0-10V)  |
+| 0x13C   | Analog (0-10 V) input voltage       | U_WORD   | V    | 100   | steering signal (0-10V)  |
 | 0x13D   | RF input voltage                    | U_WORD   | V    | 100   | steering signal (0-10V)  |
 | 0x13E   | RF input enabled                    | U_WORD   | -    | -     | 0:off;1:on               |
 | 0x13F   | Pre-heater active                   | U_WORD   | -    | -     | 0:off;1:on               |
