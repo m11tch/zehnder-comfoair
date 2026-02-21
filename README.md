@@ -63,7 +63,7 @@ logger:
 ```
 
 ### Registry table
-The following data fields have been identified on from the holding registers. Currently, all registers are read-only.
+The following data fields have been identified from the holding registers. Currently, all registers are read-only.
 
 | Address | Name                                | Datatype | Unit | Scale | Note                     |
 |-------- |-------------------------------------|----------|------|-------|--------------------------|
