@@ -321,6 +321,87 @@ sensor:
 
 # --- device info ---
 - platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Register 100 (raw)"
+  id: zehnder_reg_100
+  address: 0x64
+  register_type: holding
+  value_type: U_WORD
+  entity_category: "diagnostic"
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Register 101 (raw)"
+  id: zehnder_reg_101
+  address: 0x65
+  register_type: holding
+  value_type: U_WORD
+  entity_category: "diagnostic"
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Register 102 (raw)"
+  id: zehnder_reg_102
+  address: 0x66
+  register_type: holding
+  value_type: U_WORD
+  entity_category: "diagnostic"
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Register 103 (raw)"
+  id: zehnder_reg_103
+  address: 0x67
+  register_type: holding
+  value_type: U_WORD
+  entity_category: "diagnostic"
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Register 104 (raw)"
+  id: zehnder_reg_104
+  address: 0x68
+  register_type: holding
+  value_type: U_WORD
+  entity_category: "diagnostic"
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Register 105 (raw)"
+  id: zehnder_reg_105
+  address: 0x69
+  register_type: holding
+  value_type: U_WORD
+  entity_category: "diagnostic"
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Register 106 (raw)"
+  id: zehnder_reg_106
+  address: 0x6A
+  register_type: holding
+  value_type: U_WORD
+  entity_category: "diagnostic"
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Register 107 (raw)"
+  id: zehnder_reg_107
+  address: 0x6B
+  register_type: holding
+  value_type: U_WORD
+  entity_category: "diagnostic"
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Register 108 (raw)"
+  id: zehnder_reg_108
+  address: 0x6C
+  register_type: holding
+  value_type: U_WORD
+  entity_category: "diagnostic"
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Register 109 (raw)"
+  id: zehnder_reg_109
+  address: 0x6D
+  register_type: holding
+  value_type: U_WORD
+  entity_category: "diagnostic"
+
+- platform: modbus_controller
   internal: true
   modbus_controller_id: modbus_device
   entity_category: "diagnostic"
@@ -339,6 +420,87 @@ sensor:
             int minor = (value / 100) % 100; // Extract the minor version
             int patch = value % 100;         // Extract the patch version
             return std::to_string(major) + "." + std::to_string(minor) + "." + std::to_string(patch);
+
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Register 111 (raw)"
+  id: zehnder_reg_111
+  address: 0x6F
+  register_type: holding
+  value_type: U_WORD
+  entity_category: "diagnostic"
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Register 112 (raw)"
+  id: zehnder_reg_112
+  address: 0x70
+  register_type: holding
+  value_type: U_WORD
+  entity_category: "diagnostic"
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Register 113 (raw)"
+  id: zehnder_reg_113
+  address: 0x71
+  register_type: holding
+  value_type: U_WORD
+  entity_category: "diagnostic"
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Register 114 (raw)"
+  id: zehnder_reg_114
+  address: 0x72
+  register_type: holding
+  value_type: U_WORD
+  entity_category: "diagnostic"
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Register 115 (raw)"
+  id: zehnder_reg_115
+  address: 0x73
+  register_type: holding
+  value_type: U_WORD
+  entity_category: "diagnostic"
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Register 116 (raw)"
+  id: zehnder_reg_116
+  address: 0x74
+  register_type: holding
+  value_type: U_WORD
+  entity_category: "diagnostic"
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Register 117 (raw)"
+  id: zehnder_reg_117
+  address: 0x75
+  register_type: holding
+  value_type: U_WORD
+  entity_category: "diagnostic"
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Register 118 (raw)"
+  id: zehnder_reg_118
+  address: 0x76
+  register_type: holding
+  value_type: U_WORD
+  entity_category: "diagnostic"
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Register 119 (raw)"
+  id: zehnder_reg_119
+  address: 0x77
+  register_type: holding
+  value_type: U_WORD
+  entity_category: "diagnostic"
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Register 120 (raw)"
+  id: zehnder_reg_120
+  address: 0x78
+  register_type: holding
+  value_type: U_WORD
+  entity_category: "diagnostic"
 
 text_sensor:
   - platform: template
