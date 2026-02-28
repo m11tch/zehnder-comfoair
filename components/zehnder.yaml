@@ -325,6 +325,1744 @@ sensor:
   unit_of_measurement: "m³/h"
   device_class: "volume_flow_rate"
 
+# --- debug sensors ---
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 0"
+  id: zehnder_debug_0
+  register_type: holding
+  address: 0x0
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 1"
+  id: zehnder_debug_1
+  register_type: holding
+  address: 0x1
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 2"
+  id: zehnder_debug_2
+  register_type: holding
+  address: 0x2
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 3"
+  id: zehnder_debug_3
+  register_type: holding
+  address: 0x3
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 4"
+  id: zehnder_debug_4
+  register_type: holding
+  address: 0x4
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 5"
+  id: zehnder_debug_5
+  register_type: holding
+  address: 0x5
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 6"
+  id: zehnder_debug_6
+  register_type: holding
+  address: 0x6
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 7"
+  id: zehnder_debug_7
+  register_type: holding
+  address: 0x7
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 8"
+  id: zehnder_debug_8
+  register_type: holding
+  address: 0x8
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 9"
+  id: zehnder_debug_9
+  register_type: holding
+  address: 0x9
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 10"
+  id: zehnder_debug_a
+  register_type: holding
+  address: 0xA
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 11"
+  id: zehnder_debug_b
+  register_type: holding
+  address: 0xB
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 12"
+  id: zehnder_debug_c
+  register_type: holding
+  address: 0xC
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 13"
+  id: zehnder_debug_d
+  register_type: holding
+  address: 0xD
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 14"
+  id: zehnder_debug_e
+  register_type: holding
+  address: 0xE
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 15"
+  id: zehnder_debug_f
+  register_type: holding
+  address: 0xF
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 16"
+  id: zehnder_debug_10
+  register_type: holding
+  address: 0x10
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 17"
+  id: zehnder_debug_11
+  register_type: holding
+  address: 0x11
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 18"
+  id: zehnder_debug_12
+  register_type: holding
+  address: 0x12
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 19"
+  id: zehnder_debug_13
+  register_type: holding
+  address: 0x13
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 20"
+  id: zehnder_debug_14
+  register_type: holding
+  address: 0x14
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 21"
+  id: zehnder_debug_15
+  register_type: holding
+  address: 0x15
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 22"
+  id: zehnder_debug_16
+  register_type: holding
+  address: 0x16
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 23"
+  id: zehnder_debug_17
+  register_type: holding
+  address: 0x17
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 24"
+  id: zehnder_debug_18
+  register_type: holding
+  address: 0x18
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 25"
+  id: zehnder_debug_19
+  register_type: holding
+  address: 0x19
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 26"
+  id: zehnder_debug_1a
+  register_type: holding
+  address: 0x1A
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 27"
+  id: zehnder_debug_1b
+  register_type: holding
+  address: 0x1B
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 28"
+  id: zehnder_debug_1c
+  register_type: holding
+  address: 0x1C
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 29"
+  id: zehnder_debug_1d
+  register_type: holding
+  address: 0x1D
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 30"
+  id: zehnder_debug_1e
+  register_type: holding
+  address: 0x1E
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 31"
+  id: zehnder_debug_1f
+  register_type: holding
+  address: 0x1F
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 32"
+  id: zehnder_debug_20
+  register_type: holding
+  address: 0x20
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 33"
+  id: zehnder_debug_21
+  register_type: holding
+  address: 0x21
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 34"
+  id: zehnder_debug_22
+  register_type: holding
+  address: 0x22
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 35"
+  id: zehnder_debug_23
+  register_type: holding
+  address: 0x23
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 36"
+  id: zehnder_debug_24
+  register_type: holding
+  address: 0x24
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 37"
+  id: zehnder_debug_25
+  register_type: holding
+  address: 0x25
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 38"
+  id: zehnder_debug_26
+  register_type: holding
+  address: 0x26
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 39"
+  id: zehnder_debug_27
+  register_type: holding
+  address: 0x27
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 40"
+  id: zehnder_debug_28
+  register_type: holding
+  address: 0x28
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 41"
+  id: zehnder_debug_29
+  register_type: holding
+  address: 0x29
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 42"
+  id: zehnder_debug_2a
+  register_type: holding
+  address: 0x2A
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 43"
+  id: zehnder_debug_2b
+  register_type: holding
+  address: 0x2B
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 44"
+  id: zehnder_debug_2c
+  register_type: holding
+  address: 0x2C
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 45"
+  id: zehnder_debug_2d
+  register_type: holding
+  address: 0x2D
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 46"
+  id: zehnder_debug_2e
+  register_type: holding
+  address: 0x2E
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 47"
+  id: zehnder_debug_2f
+  register_type: holding
+  address: 0x2F
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 48"
+  id: zehnder_debug_30
+  register_type: holding
+  address: 0x30
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 49"
+  id: zehnder_debug_31
+  register_type: holding
+  address: 0x31
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 50"
+  id: zehnder_debug_32
+  register_type: holding
+  address: 0x32
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 51"
+  id: zehnder_debug_33
+  register_type: holding
+  address: 0x33
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 52"
+  id: zehnder_debug_34
+  register_type: holding
+  address: 0x34
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 53"
+  id: zehnder_debug_35
+  register_type: holding
+  address: 0x35
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 54"
+  id: zehnder_debug_36
+  register_type: holding
+  address: 0x36
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 55"
+  id: zehnder_debug_37
+  register_type: holding
+  address: 0x37
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 56"
+  id: zehnder_debug_38
+  register_type: holding
+  address: 0x38
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 57"
+  id: zehnder_debug_39
+  register_type: holding
+  address: 0x39
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 58"
+  id: zehnder_debug_3a
+  register_type: holding
+  address: 0x3A
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 59"
+  id: zehnder_debug_3b
+  register_type: holding
+  address: 0x3B
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 60"
+  id: zehnder_debug_3c
+  register_type: holding
+  address: 0x3C
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 61"
+  id: zehnder_debug_3d
+  register_type: holding
+  address: 0x3D
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 62"
+  id: zehnder_debug_3e
+  register_type: holding
+  address: 0x3E
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 63"
+  id: zehnder_debug_3f
+  register_type: holding
+  address: 0x3F
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 64"
+  id: zehnder_debug_40
+  register_type: holding
+  address: 0x40
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 65"
+  id: zehnder_debug_41
+  register_type: holding
+  address: 0x41
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 66"
+  id: zehnder_debug_42
+  register_type: holding
+  address: 0x42
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 67"
+  id: zehnder_debug_43
+  register_type: holding
+  address: 0x43
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 68"
+  id: zehnder_debug_44
+  register_type: holding
+  address: 0x44
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 69"
+  id: zehnder_debug_45
+  register_type: holding
+  address: 0x45
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 70"
+  id: zehnder_debug_46
+  register_type: holding
+  address: 0x46
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 71"
+  id: zehnder_debug_47
+  register_type: holding
+  address: 0x47
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 72"
+  id: zehnder_debug_48
+  register_type: holding
+  address: 0x48
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 73"
+  id: zehnder_debug_49
+  register_type: holding
+  address: 0x49
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 74"
+  id: zehnder_debug_4a
+  register_type: holding
+  address: 0x4A
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 75"
+  id: zehnder_debug_4b
+  register_type: holding
+  address: 0x4B
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 76"
+  id: zehnder_debug_4c
+  register_type: holding
+  address: 0x4C
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 77"
+  id: zehnder_debug_4d
+  register_type: holding
+  address: 0x4D
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 78"
+  id: zehnder_debug_4e
+  register_type: holding
+  address: 0x4E
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 79"
+  id: zehnder_debug_4f
+  register_type: holding
+  address: 0x4F
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 80"
+  id: zehnder_debug_50
+  register_type: holding
+  address: 0x50
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 81"
+  id: zehnder_debug_51
+  register_type: holding
+  address: 0x51
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 82"
+  id: zehnder_debug_52
+  register_type: holding
+  address: 0x52
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 83"
+  id: zehnder_debug_53
+  register_type: holding
+  address: 0x53
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 84"
+  id: zehnder_debug_54
+  register_type: holding
+  address: 0x54
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 85"
+  id: zehnder_debug_55
+  register_type: holding
+  address: 0x55
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 86"
+  id: zehnder_debug_56
+  register_type: holding
+  address: 0x56
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 87"
+  id: zehnder_debug_57
+  register_type: holding
+  address: 0x57
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 88"
+  id: zehnder_debug_58
+  register_type: holding
+  address: 0x58
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 89"
+  id: zehnder_debug_59
+  register_type: holding
+  address: 0x59
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 90"
+  id: zehnder_debug_5a
+  register_type: holding
+  address: 0x5A
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 91"
+  id: zehnder_debug_5b
+  register_type: holding
+  address: 0x5B
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 92"
+  id: zehnder_debug_5c
+  register_type: holding
+  address: 0x5C
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 93"
+  id: zehnder_debug_5d
+  register_type: holding
+  address: 0x5D
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 94"
+  id: zehnder_debug_5e
+  register_type: holding
+  address: 0x5E
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 95"
+  id: zehnder_debug_5f
+  register_type: holding
+  address: 0x5F
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 96"
+  id: zehnder_debug_60
+  register_type: holding
+  address: 0x60
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 97"
+  id: zehnder_debug_61
+  register_type: holding
+  address: 0x61
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 98"
+  id: zehnder_debug_62
+  register_type: holding
+  address: 0x62
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 99"
+  id: zehnder_debug_63
+  register_type: holding
+  address: 0x63
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 100"
+  id: zehnder_debug_64
+  register_type: holding
+  address: 0x64
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 102"
+  id: zehnder_debug_66
+  register_type: holding
+  address: 0x66
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 103"
+  id: zehnder_debug_67
+  register_type: holding
+  address: 0x67
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 104"
+  id: zehnder_debug_68
+  register_type: holding
+  address: 0x68
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 105"
+  id: zehnder_debug_69
+  register_type: holding
+  address: 0x69
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 106"
+  id: zehnder_debug_6a
+  register_type: holding
+  address: 0x6A
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 107"
+  id: zehnder_debug_6b
+  register_type: holding
+  address: 0x6B
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 108"
+  id: zehnder_debug_6c
+  register_type: holding
+  address: 0x6C
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 109"
+  id: zehnder_debug_6d
+  register_type: holding
+  address: 0x6D
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 112"
+  id: zehnder_debug_70
+  register_type: holding
+  address: 0x70
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 113"
+  id: zehnder_debug_71
+  register_type: holding
+  address: 0x71
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 114"
+  id: zehnder_debug_72
+  register_type: holding
+  address: 0x72
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 115"
+  id: zehnder_debug_73
+  register_type: holding
+  address: 0x73
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 116"
+  id: zehnder_debug_74
+  register_type: holding
+  address: 0x74
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 117"
+  id: zehnder_debug_75
+  register_type: holding
+  address: 0x75
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 118"
+  id: zehnder_debug_76
+  register_type: holding
+  address: 0x76
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 119"
+  id: zehnder_debug_77
+  register_type: holding
+  address: 0x77
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 120"
+  id: zehnder_debug_78
+  register_type: holding
+  address: 0x78
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 121"
+  id: zehnder_debug_79
+  register_type: holding
+  address: 0x79
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 122"
+  id: zehnder_debug_7a
+  register_type: holding
+  address: 0x7A
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 123"
+  id: zehnder_debug_7b
+  register_type: holding
+  address: 0x7B
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 124"
+  id: zehnder_debug_7c
+  register_type: holding
+  address: 0x7C
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 250"
+  id: zehnder_debug_fa
+  register_type: holding
+  address: 0xFA
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 251"
+  id: zehnder_debug_fb
+  register_type: holding
+  address: 0xFB
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 252"
+  id: zehnder_debug_fc
+  register_type: holding
+  address: 0xFC
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 253"
+  id: zehnder_debug_fd
+  register_type: holding
+  address: 0xFD
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 254"
+  id: zehnder_debug_fe
+  register_type: holding
+  address: 0xFE
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 255"
+  id: zehnder_debug_ff
+  register_type: holding
+  address: 0xFF
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 256"
+  id: zehnder_debug_100
+  register_type: holding
+  address: 0x100
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 257"
+  id: zehnder_debug_101
+  register_type: holding
+  address: 0x101
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 258"
+  id: zehnder_debug_102
+  register_type: holding
+  address: 0x102
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 259"
+  id: zehnder_debug_103
+  register_type: holding
+  address: 0x103
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 260"
+  id: zehnder_debug_104
+  register_type: holding
+  address: 0x104
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 261"
+  id: zehnder_debug_105
+  register_type: holding
+  address: 0x105
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 262"
+  id: zehnder_debug_106
+  register_type: holding
+  address: 0x106
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 263"
+  id: zehnder_debug_107
+  register_type: holding
+  address: 0x107
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 264"
+  id: zehnder_debug_108
+  register_type: holding
+  address: 0x108
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 265"
+  id: zehnder_debug_109
+  register_type: holding
+  address: 0x109
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 266"
+  id: zehnder_debug_10a
+  register_type: holding
+  address: 0x10A
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 267"
+  id: zehnder_debug_10b
+  register_type: holding
+  address: 0x10B
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 268"
+  id: zehnder_debug_10c
+  register_type: holding
+  address: 0x10C
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 269"
+  id: zehnder_debug_10d
+  register_type: holding
+  address: 0x10D
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 270"
+  id: zehnder_debug_10e
+  register_type: holding
+  address: 0x10E
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 271"
+  id: zehnder_debug_10f
+  register_type: holding
+  address: 0x10F
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 272"
+  id: zehnder_debug_110
+  register_type: holding
+  address: 0x110
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 273"
+  id: zehnder_debug_111
+  register_type: holding
+  address: 0x111
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 274"
+  id: zehnder_debug_112
+  register_type: holding
+  address: 0x112
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 275"
+  id: zehnder_debug_113
+  register_type: holding
+  address: 0x113
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 276"
+  id: zehnder_debug_114
+  register_type: holding
+  address: 0x114
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 277"
+  id: zehnder_debug_115
+  register_type: holding
+  address: 0x115
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 278"
+  id: zehnder_debug_116
+  register_type: holding
+  address: 0x116
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 279"
+  id: zehnder_debug_117
+  register_type: holding
+  address: 0x117
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 280"
+  id: zehnder_debug_118
+  register_type: holding
+  address: 0x118
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 281"
+  id: zehnder_debug_119
+  register_type: holding
+  address: 0x119
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 282"
+  id: zehnder_debug_11a
+  register_type: holding
+  address: 0x11A
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 283"
+  id: zehnder_debug_11b
+  register_type: holding
+  address: 0x11B
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 284"
+  id: zehnder_debug_11c
+  register_type: holding
+  address: 0x11C
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 285"
+  id: zehnder_debug_11d
+  register_type: holding
+  address: 0x11D
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 286"
+  id: zehnder_debug_11e
+  register_type: holding
+  address: 0x11E
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 287"
+  id: zehnder_debug_11f
+  register_type: holding
+  address: 0x11F
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 288"
+  id: zehnder_debug_120
+  register_type: holding
+  address: 0x120
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 289"
+  id: zehnder_debug_121
+  register_type: holding
+  address: 0x121
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 290"
+  id: zehnder_debug_122
+  register_type: holding
+  address: 0x122
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 291"
+  id: zehnder_debug_123
+  register_type: holding
+  address: 0x123
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 292"
+  id: zehnder_debug_124
+  register_type: holding
+  address: 0x124
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 293"
+  id: zehnder_debug_125
+  register_type: holding
+  address: 0x125
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 294"
+  id: zehnder_debug_126
+  register_type: holding
+  address: 0x126
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 295"
+  id: zehnder_debug_127
+  register_type: holding
+  address: 0x127
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 296"
+  id: zehnder_debug_128
+  register_type: holding
+  address: 0x128
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 297"
+  id: zehnder_debug_129
+  register_type: holding
+  address: 0x129
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 298"
+  id: zehnder_debug_12a
+  register_type: holding
+  address: 0x12A
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 299"
+  id: zehnder_debug_12b
+  register_type: holding
+  address: 0x12B
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 302"
+  id: zehnder_debug_12e
+  register_type: holding
+  address: 0x12E
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 322"
+  id: zehnder_debug_142
+  register_type: holding
+  address: 0x142
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 323"
+  id: zehnder_debug_143
+  register_type: holding
+  address: 0x143
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 324"
+  id: zehnder_debug_144
+  register_type: holding
+  address: 0x144
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 332"
+  id: zehnder_debug_14c
+  register_type: holding
+  address: 0x14C
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 333"
+  id: zehnder_debug_14d
+  register_type: holding
+  address: 0x14D
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 334"
+  id: zehnder_debug_14e
+  register_type: holding
+  address: 0x14E
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 335"
+  id: zehnder_debug_14f
+  register_type: holding
+  address: 0x14F
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 336"
+  id: zehnder_debug_150
+  register_type: holding
+  address: 0x150
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 339"
+  id: zehnder_debug_153
+  register_type: holding
+  address: 0x153
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 340"
+  id: zehnder_debug_154
+  register_type: holding
+  address: 0x154
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 341"
+  id: zehnder_debug_155
+  register_type: holding
+  address: 0x155
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 342"
+  id: zehnder_debug_156
+  register_type: holding
+  address: 0x156
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 343"
+  id: zehnder_debug_157
+  register_type: holding
+  address: 0x157
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 344"
+  id: zehnder_debug_158
+  register_type: holding
+  address: 0x158
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 345"
+  id: zehnder_debug_159
+  register_type: holding
+  address: 0x159
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 346"
+  id: zehnder_debug_15a
+  register_type: holding
+  address: 0x15A
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 347"
+  id: zehnder_debug_15b
+  register_type: holding
+  address: 0x15B
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 348"
+  id: zehnder_debug_15c
+  register_type: holding
+  address: 0x15C
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 349"
+  id: zehnder_debug_15d
+  register_type: holding
+  address: 0x15D
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 350"
+  id: zehnder_debug_15e
+  register_type: holding
+  address: 0x15E
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 351"
+  id: zehnder_debug_15f
+  register_type: holding
+  address: 0x15F
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 352"
+  id: zehnder_debug_160
+  register_type: holding
+  address: 0x160
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 353"
+  id: zehnder_debug_161
+  register_type: holding
+  address: 0x161
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 354"
+  id: zehnder_debug_162
+  register_type: holding
+  address: 0x162
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 355"
+  id: zehnder_debug_163
+  register_type: holding
+  address: 0x163
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 356"
+  id: zehnder_debug_164
+  register_type: holding
+  address: 0x164
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 357"
+  id: zehnder_debug_165
+  register_type: holding
+  address: 0x165
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 358"
+  id: zehnder_debug_166
+  register_type: holding
+  address: 0x166
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 359"
+  id: zehnder_debug_167
+  register_type: holding
+  address: 0x167
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 360"
+  id: zehnder_debug_168
+  register_type: holding
+  address: 0x168
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 361"
+  id: zehnder_debug_169
+  register_type: holding
+  address: 0x169
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 362"
+  id: zehnder_debug_16a
+  register_type: holding
+  address: 0x16A
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 363"
+  id: zehnder_debug_16b
+  register_type: holding
+  address: 0x16B
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 364"
+  id: zehnder_debug_16c
+  register_type: holding
+  address: 0x16C
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 365"
+  id: zehnder_debug_16d
+  register_type: holding
+  address: 0x16D
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 366"
+  id: zehnder_debug_16e
+  register_type: holding
+  address: 0x16E
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 367"
+  id: zehnder_debug_16f
+  register_type: holding
+  address: 0x16F
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 368"
+  id: zehnder_debug_170
+  register_type: holding
+  address: 0x170
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 369"
+  id: zehnder_debug_171
+  register_type: holding
+  address: 0x171
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 370"
+  id: zehnder_debug_172
+  register_type: holding
+  address: 0x172
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 371"
+  id: zehnder_debug_173
+  register_type: holding
+  address: 0x173
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 372"
+  id: zehnder_debug_174
+  register_type: holding
+  address: 0x174
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 373"
+  id: zehnder_debug_175
+  register_type: holding
+  address: 0x175
+  entity_category: "diagnostic"
+  value_type: U_WORD
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug Register 374"
+  id: zehnder_debug_176
+  register_type: holding
+  address: 0x176
+  entity_category: "diagnostic"
+  value_type: U_WORD
+
 # --- device info ---
 - platform: modbus_controller
   internal: true
