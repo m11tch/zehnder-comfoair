@@ -2084,6 +2084,15 @@ sensor:
             int patch = value % 100;         // Extract the patch version
             return std::to_string(major) + "." + std::to_string(minor) + "." + std::to_string(patch);
 
+- platform: modbus_controller
+  modbus_controller_id: modbus_device
+  name: "Debug status"
+  id: zehnder_debug_101
+  register_type: holding
+  address: 0x65
+  entity_category: "diagnostic"
+  value_type: U_WORD
+  
 text_sensor:
   - platform: template
     name: "Firmware version"
