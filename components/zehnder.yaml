@@ -429,7 +429,7 @@ text_sensor:
         switch (value) {
           case 0: return std::string("E300 P");
           case 2: return std::string("E300 RF");
-          case 4: return std::string("E400 RF");
+          case 3: return std::string("E400 RF");
           default: return std::string("Unknown (") + std::to_string(value) + ")";
         }
         return x;
