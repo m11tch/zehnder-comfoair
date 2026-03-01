@@ -2068,6 +2068,30 @@ sensor:
   internal: true
   modbus_controller_id: modbus_device
   entity_category: "diagnostic"
+  name: "Status (raw)"
+  id: zehnder_status_raw
+  address: 0x65
+  register_type: holding
+  value_type: U_WORD
+  on_value:
+    then:
+      - text_sensor.template.publish:
+          id: zehnder_status
+          state: !lambda |-
+            id(zehnder_status).set_attribute("raw_value", std::to_string((int)x));
+            switch ((int)x) {
+              case 0: return std::string("Fault");
+              case 2: return std::string("Self-test");
+              case 10: return std::string("Normal");
+              case 42: return std::string("Maintenance Mode");
+              default: return std::string("Unknown");
+            }
+            return std::string("Unknown");
+
+- platform: modbus_controller
+  internal: true
+  modbus_controller_id: modbus_device
+  entity_category: "diagnostic"
   name: "Firmware version (raw)"
   id: zehnder_firmware_version_raw
   address: 0x6E
@@ -2091,22 +2115,24 @@ text_sensor:
     update_interval: never
     entity_category: "diagnostic"
     
-  - platform: modbus_controller
-    modbus_controller_id: modbus_device
+  - platform: template
     name: "Status"
     id: zehnder_status
     entity_category: "diagnostic"
-    address: 0x65
+  
+  - platform: modbus_controller
+    modbus_controller_id: modbus_device
+    name: "Orientation"
+    id: zehnder_orientation
     register_type: holding
+    entity_category: "diagnostic"
+    address: 0x6F
     raw_encode: HEXBYTES
     lambda: |-
         uint16_t value = modbus_controller::word_from_hex_str(x, 0);
-        id(zehnder_status).set_attribute("raw_value", std::to_string(value));
         switch (value) {
-          case 0: return std::string("Fault");
-          case 2: return std::string("Self-test");
-          case 10: return std::string("Normal");
-          case 42: return std::string("Maintenance Mode");
+          case 0: return std::string("Right");
+          case 1: return std::string("Left");
           default: return std::string("Unknown");
         }
         return x;
