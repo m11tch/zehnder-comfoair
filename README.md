@@ -70,7 +70,7 @@ The following data fields have been identified from the holding registers. Curre
 
 | Address | Name                              | Datatype | Unit | Scale | Note                                                     |
 |-------- |-----------------------------------|----------|------|-------|----------------------------------------------------------|
-| 0x065   | Device Status                     | U_WORD   | -    | -     | 0: Fault; 2: Self Test; 10: Normal; 42: Maintenance Mode |
+| 0x065   | Device Status                     | U_WORD   | -    | -     | 0: Fault; 2: Self Test; 10: Normal; 20: Standy; 42: Maintenance Mode |
 | 0x06E   | Firmware version                  | U_WORD   | -    | -     | 20800 = 2.8.0                                            |
 | 0x06F   | Orientation                       | U_WORD   | -    | -     | 0:Right; 1:Left                                          |
 | 0x070   | Model                             | U_WORD   | -    | -     | 0:E300 P; 2:E300 RF; 4:E400 RF                           |
