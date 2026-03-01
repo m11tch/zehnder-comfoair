@@ -2115,7 +2115,7 @@ text_sensor:
           case 2: return std::string("Self-test");
           case 10: return std::string("Normal");
           case 42: return std::string("Maintenance Mode");
-          default: return std::string("Unknown");
+          default: return std::string("Unknown (") + std::to_string(value) + ")";
         }
         return x;
   
