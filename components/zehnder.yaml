@@ -2101,6 +2101,7 @@ text_sensor:
     raw_encode: HEXBYTES
     lambda: |-
         uint16_t value = modbus_controller::word_from_hex_str(x, 0);
+        it.set_attribute("raw_value", std::to_string(value));
         switch (value) {
           case 0: return std::string("Fault");
           case 2: return std::string("Self-test");
