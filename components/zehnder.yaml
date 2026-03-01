@@ -393,7 +393,7 @@ text_sensor:
           case 10: return std::string("Normal");
           case 20: return std::string("Standby");
           case 42: return std::string("Maintenance Mode");
-          default: return std::string("Unknown");
+          default: return std::string("Unknown (") + std::to_string(value) + ")";
         }
         return x;
   
@@ -410,7 +410,7 @@ text_sensor:
         switch (value) {
           case 0: return std::string("Right");
           case 1: return std::string("Left");
-          default: return std::string("Unknown");
+          default: return std::string("Unknown (") + std::to_string(value) + ")";
         }
         return x;
         
@@ -428,7 +428,7 @@ text_sensor:
           case 0: return std::string("E300 P");
           case 2: return std::string("E300 RF");
           case 4: return std::string("E400 RF");
-          default: return std::string("Unknown");
+          default: return std::string("Unknown (") + std::to_string(value) + ")";
         }
         return x;
   
