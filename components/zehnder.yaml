@@ -391,6 +391,7 @@ text_sensor:
           case 0: return std::string("Fault");
           case 2: return std::string("Self-test");
           case 10: return std::string("Normal");
+          case 20: return std::string("Standby");
           case 42: return std::string("Maintenance Mode");
           default: return std::string("Unknown");
         }
