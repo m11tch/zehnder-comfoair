@@ -438,10 +438,11 @@ binary_sensor:
 - platform: modbus_controller
   modbus_controller_id: modbus_device
   name: "RF input enabled"
+  id: zehnder_rf_input_enabled
   address: 0x13E
   register_type: holding
+  disabled_by_default: true
   entity_category: "diagnostic"
-  id: zehnder_rf_input_enabled
 - platform: modbus_controller
   modbus_controller_id: modbus_device
   name: "Pre-heater status"
