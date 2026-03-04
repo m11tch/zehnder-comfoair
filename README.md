@@ -68,6 +68,7 @@ The following schematic shows how to connect the hardware.
 +---------------+       |                 TX o-------o TXD         |
                         |                 RX o-------o RXD         |
                         +--------------------+       +-------------+
+```
 
 ### Example of minimal configuration yaml
 ```yaml
