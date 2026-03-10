@@ -57,33 +57,33 @@ script:
               ESP_LOGI("register_dump", "Batch %d/%d complete", id(register_dump_batch), num_batches);
 
               if (id(register_dump_batch) >= num_batches) {
-                ESP_LOGI("register_dump", "All batches complete, publishing result");
-                id(zehnder_register_dump_output).publish_state(id(register_dump_result));
-
-                // Free memory
-                id(register_dump_result) = "";
-                id(register_dump_result).shrink_to_fit();
+                ESP_LOGI("register_dump", "All batches complete, triggering publish");
+                id(publish_dump_result).execute();
               }
             };
 
             controller->queue_command(cmd);
           }
 
-      # Timeout fallback: if not all batches completed after 30s, publish what we have
-      - delay: 30s
+  - id: publish_dump_result
+    mode: single
+    then:
+      - homeassistant.service:
+          service: persistent_notification.create
+          data:
+            title: "Zehnder ComfoAir - Register Dump"
+            notification_id: "zehnder_register_dump"
+          variables:
+            dump_data: |-
+              return id(register_dump_result);
+          data_template:
+            message: "{{ dump_data }}"
       - lambda: |-
-          if (id(register_dump_batch) < 8) {
-            ESP_LOGW("register_dump", "Timeout: only %d/8 batches completed", id(register_dump_batch));
-
-            if (!id(register_dump_result).empty()) {
-              id(zehnder_register_dump_output).publish_state(id(register_dump_result));
-            } else {
-              id(zehnder_register_dump_output).publish_state("Error: no data received");
-            }
-
-            id(register_dump_result) = "";
-            id(register_dump_result).shrink_to_fit();
-          }
+          id(zehnder_register_dump_output).publish_state("Complete (375 registers)");
+          ESP_LOGI("register_dump", "Register dump published to HA notification");
+          // Free memory
+          id(register_dump_result) = "";
+          id(register_dump_result).shrink_to_fit();
 
 button:
   - platform: template
