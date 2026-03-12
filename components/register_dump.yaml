@@ -37,13 +37,11 @@ esphome:
           class DumpHandler : public esphome::web_server_idf::AsyncWebHandler {
            public:
             bool canHandle(esphome::web_server_idf::AsyncWebServerRequest *request) const override {
-              char url_buf[32];
-              auto url = request->url_to(url_buf);
+              std::string url = request->url();
               return url == "/registers" || url == "/registers/start" || url == "/registers/download.csv";
             }
             void handleRequest(esphome::web_server_idf::AsyncWebServerRequest *request) override {
-              char url_buf[32];
-              auto url = request->url_to(url_buf);
+              std::string url = request->url();
               if (url == "/registers") {
                 std::string html = "<html><head><title>Zehnder Register Dump</title>";
                 html += "<style>body{font-family:sans-serif;margin:2em;line-height:1.5;} .btn{background:#03a9f4;color:white;padding:10px 20px;text-decoration:none;border-radius:4px;border:none;cursor:pointer;font-size:16px;}</style></head><body>";
