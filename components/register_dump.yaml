@@ -32,42 +32,79 @@ esphome:
     priority: -100
     then:
       - lambda: |-
+          #ifdef USE_ESP32_FRAMEWORK_ESP_IDF
+          // ESP-IDF Custom Handler
+          class DumpHandler : public esphome::web_server_idf::AsyncWebHandler {
+           public:
+            bool canHandle(esphome::web_server_idf::AsyncWebServerRequest *request) const override {
+              char url_buf[32];
+              auto url = request->url_to(url_buf);
+              return url == "/registers" || url == "/registers/start" || url == "/registers/download.csv";
+            }
+            void handleRequest(esphome::web_server_idf::AsyncWebServerRequest *request) override {
+              char url_buf[32];
+              auto url = request->url_to(url_buf);
+              if (url == "/registers") {
+                std::string html = "<html><head><title>Zehnder Register Dump</title>";
+                html += "<style>body{font-family:sans-serif;margin:2em;line-height:1.5;} .btn{background:#03a9f4;color:white;padding:10px 20px;text-decoration:none;border-radius:4px;border:none;cursor:pointer;font-size:16px;}</style></head><body>";
+                html += "<h1>Zehnder ComfoAir Register Dump</h1>";
+                html += "<p><strong>Status:</strong> " + id(zehnder_register_dump_output).state + "</p>";
+                html += "<form action='/registers/start' method='POST' style='margin:1em 0;'>";
+                html += "<input type='submit' class='btn' value='Start New Dump'>";
+                html += "</form>";
+                if (!id(register_dump_result).empty()) {
+                  html += "<div style='margin-top:2em;padding:1em;background:#f5f5f5;border-left:5px solid #03a9f4;'>";
+                  html += "<p>Dump complete! You can now download the results.</p>";
+                  html += "<a href='/registers/download.csv' class='btn' style='background:#4caf50;'>Download registers.csv</a>";
+                  html += "</div>";
+                }
+                html += "</body></html>";
+                request->send(200, "text/html", html.c_str());
+              } else if (url == "/registers/start") {
+                id(register_dump_script).execute();
+                request->redirect("/registers");
+              } else if (url == "/registers/download.csv") {
+                auto *response = request->beginResponse(200, "text/csv", id(register_dump_result));
+                response->addHeader("Content-Disposition", "attachment; filename=\"registers.csv\"");
+                request->send(response);
+              }
+            }
+          };
+          id(zehnder_web_server_base).get_server()->addHandler(new DumpHandler());
+
+          #else
+          // Arduino Logic
           auto *server = id(zehnder_web_server_base).get_server();
           
-          // Controller page
           server->on("/registers", HTTP_GET, [](AsyncWebServerRequest *request) {
             std::string html = "<html><head><title>Zehnder Register Dump</title>";
             html += "<style>body{font-family:sans-serif;margin:2em;line-height:1.5;} .btn{background:#03a9f4;color:white;padding:10px 20px;text-decoration:none;border-radius:4px;border:none;cursor:pointer;font-size:16px;}</style></head><body>";
             html += "<h1>Zehnder ComfoAir Register Dump</h1>";
             html += "<p><strong>Status:</strong> " + id(zehnder_register_dump_output).state + "</p>";
-            
             html += "<form action='/registers/start' method='POST' style='margin:1em 0;'>";
             html += "<input type='submit' class='btn' value='Start New Dump'>";
             html += "</form>";
-            
             if (!id(register_dump_result).empty()) {
               html += "<div style='margin-top:2em;padding:1em;background:#f5f5f5;border-left:5px solid #03a9f4;'>";
               html += "<p>Dump complete! You can now download the results.</p>";
               html += "<a href='/registers/download.csv' class='btn' style='background:#4caf50;'>Download registers.csv</a>";
               html += "</div>";
             }
-            
             html += "</body></html>";
             request->send(200, "text/html", html.c_str());
           });
 
-          // Trigger dump
           server->on("/registers/start", HTTP_POST, [](AsyncWebServerRequest *request) {
             id(register_dump_script).execute();
             request->redirect("/registers");
           });
 
-          // Download CSV
           server->on("/registers/download.csv", HTTP_GET, [](AsyncWebServerRequest *request) {
             AsyncWebServerResponse *response = request->beginResponse(200, "text/csv", id(register_dump_result).c_str());
             response->addHeader("Content-Disposition", "attachment; filename=\"registers.csv\"");
             request->send(response);
           });
+          #endif
 
 script:
   - id: register_dump_script
@@ -111,7 +148,6 @@ script:
               if (id(register_dump_batch) >= num_batches) {
                 ESP_LOGI("register_dump", "All 8 batches complete. %zu bytes total.", id(register_dump_result).size());
                 id(zehnder_register_dump_output).publish_state("Complete (375 registers)");
-                // We DON'T clear the result string here anymore, so it can be downloaded.
               } else {
                 id(zehnder_register_dump_output).publish_state("Reading... (" + std::to_string(id(register_dump_batch)) + "/8)");
               }
