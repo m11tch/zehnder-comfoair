@@ -32,7 +32,6 @@ text_sensor:
     icon: mdi:database-export
 
 esphome:
-  comment: "Register Dump: /registers"
   on_boot:
     priority: -100
     then:
