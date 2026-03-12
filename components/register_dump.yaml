@@ -1,3 +1,9 @@
+# Register Dump via Web Server
+# Provides a CSV export of all holding registers 0-374
+
+web_server:
+  id: zehnder_web_server
+
 globals:
   - id: register_dump_result
     type: std::string
@@ -12,16 +18,59 @@ text_sensor:
   - platform: template
     name: "Register Dump"
     id: zehnder_register_dump_output
+    internal: true
     entity_category: "diagnostic"
     update_interval: never
     icon: mdi:database-export
+
+esphome:
+  on_boot:
+    priority: -100
+    then:
+      - lambda: |-
+          auto *server = id(zehnder_web_server).get_server();
+          
+          // Controller page
+          server->on("/registers", HTTP_GET, [](AsyncWebServerRequest *request) {
+            std::string html = "<html><head><title>Zehnder Register Dump</title>";
+            html += "<style>body{font-family:sans-serif;margin:2em;line-height:1.5;} .btn{background:#03a9f4;color:white;padding:10px 20px;text-decoration:none;border-radius:4px;border:none;cursor:pointer;font-size:16px;}</style></head><body>";
+            html += "<h1>Zehnder ComfoAir Register Dump</h1>";
+            html += "<p><strong>Status:</strong> " + id(zehnder_register_dump_output).state + "</p>";
+            
+            html += "<form action='/registers/start' method='POST' style='margin:1em 0;'>";
+            html += "<input type='submit' class='btn' value='Start New Dump'>";
+            html += "</form>";
+            
+            if (!id(register_dump_result).empty()) {
+              html += "<div style='margin-top:2em;padding:1em;background:#f5f5f5;border-left:5px solid #03a9f4;'>";
+              html += "<p>Dump complete! You can now download the results.</p>";
+              html += "<a href='/registers/download.csv' class='btn' style='background:#4caf50;'>Download registers.csv</a>";
+              html += "</div>";
+            }
+            
+            html += "</body></html>";
+            request->send(200, "text/html", html.c_str());
+          });
+
+          // Trigger dump
+          server->on("/registers/start", HTTP_POST, [](AsyncWebServerRequest *request) {
+            id(register_dump_script).execute();
+            request->redirect("/registers");
+          });
+
+          // Download CSV
+          server->on("/registers/download.csv", HTTP_GET, [](AsyncWebServerRequest *request) {
+            AsyncWebServerResponse *response = request->beginResponse(200, "text/csv", id(register_dump_result).c_str());
+            response->addHeader("Content-Disposition", "attachment; filename=\"registers.csv\"");
+            request->send(response);
+          });
 
 script:
   - id: register_dump_script
     mode: single
     then:
       - lambda: |-
-          id(register_dump_result) = "| Addr (hex) | Addr (dec) | Value |\n|---|---|---|\n";
+          id(register_dump_result) = "Addr (dec),Addr (hex),Value\n";
           id(register_dump_batch) = 0;
           id(zehnder_register_dump_output).publish_state("Reading registers...");
           ESP_LOGI("register_dump", "Starting register dump (0-374)...");
@@ -43,54 +92,26 @@ script:
                 uint16_t start_address,
                 const std::vector<uint8_t> &data) {
 
-              ESP_LOGI("register_dump", "Batch starting at %d: received %d bytes", start, data.size());
+              ESP_LOGD("register_dump", "Batch starting at %d: received %d bytes", start, data.size());
 
               for (int i = 0; i < count && (i * 2 + 1) < (int)data.size(); i++) {
                 uint16_t value = (data[i * 2] << 8) | data[i * 2 + 1];
                 int addr = start + i;
                 char hex[8];
                 snprintf(hex, sizeof(hex), "0x%03X", addr);
-                id(register_dump_result) += "| " + std::string(hex) + " | " + std::to_string(addr) + " | " + std::to_string(value) + " |\n";
+                id(register_dump_result) += std::to_string(addr) + "," + std::string(hex) + "," + std::to_string(value) + "\n";
               }
 
               id(register_dump_batch)++;
-              ESP_LOGI("register_dump", "Batch %d/%d complete", id(register_dump_batch), num_batches);
-
+              
               if (id(register_dump_batch) >= num_batches) {
-                ESP_LOGI("register_dump", "All batches complete, triggering publish");
-                id(publish_dump_result).execute();
+                ESP_LOGI("register_dump", "All 8 batches complete. %zu bytes total.", id(register_dump_result).size());
+                id(zehnder_register_dump_output).publish_state("Complete (375 registers)");
+                // We DON'T clear the result string here anymore, so it can be downloaded.
+              } else {
+                id(zehnder_register_dump_output).publish_state("Reading... (" + std::to_string(id(register_dump_batch)) + "/8)");
               }
             };
 
             controller->queue_command(cmd);
           }
-
-  - id: publish_dump_result
-    mode: single
-    then:
-      - homeassistant.service:
-          service: persistent_notification.create
-          data:
-            title: "Zehnder ComfoAir - Register Dump"
-            notification_id: "zehnder_register_dump"
-          variables:
-            dump_data: |-
-              return id(register_dump_result);
-          data_template:
-            message: "{{ dump_data }}"
-      - lambda: |-
-          id(zehnder_register_dump_output).publish_state("Complete (375 registers)");
-          ESP_LOGI("register_dump", "Register dump published to HA notification");
-          // Free memory
-          id(register_dump_result) = "";
-          id(register_dump_result).shrink_to_fit();
-
-button:
-  - platform: template
-    name: "Dump Registers"
-    id: zehnder_dump_registers
-    icon: mdi:database-export
-    entity_category: "diagnostic"
-    on_press:
-      then:
-        - script.execute: register_dump_script
