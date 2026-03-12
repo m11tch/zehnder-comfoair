@@ -120,7 +120,8 @@ esphome:
 
           server->on("/registers/status", HTTP_GET, [](AsyncWebServerRequest *request) {
             std::string json = "{\"s\":\"" + id(zehnder_register_dump_output).state + "\",\"c\":" + (id(register_dump_complete) ? "true" : "false") + "}";
-            AsyncWebServerResponse *response = request->beginResponse(200, "application/json", json.c_str());
+            // Explicitly cast to String to ensure ESPAsyncWebServer copies the content
+            AsyncWebServerResponse *response = request->beginResponse(200, "application/json", String(json.c_str()));
             response->addHeader("Cache-Control", "no-cache, no-store, must-revalidate");
             request->send(response);
           });
@@ -132,7 +133,8 @@ esphome:
           });
 
           server->on("/registers/download.csv", HTTP_GET, [](AsyncWebServerRequest *request) {
-            AsyncWebServerResponse *response = request->beginResponse(200, "text/csv", id(register_dump_result).c_str());
+            // Using global string is safer, but casting to String ensures the web server handles it correctly
+            AsyncWebServerResponse *response = request->beginResponse(200, "text/csv", String(id(register_dump_result).c_str()));
             response->addHeader("Content-Disposition", "attachment; filename=\"registers.csv\"");
             request->send(response);
           });
